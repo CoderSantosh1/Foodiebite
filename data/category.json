@@ -134,7 +134,7 @@
   "testimonials": {
     "eyebrow": "Our Customers Say",
     "title": "Our Testimonials",
-    "background": "/images/Testmonial-bg-new.webp",
+    "background": "/images/Testmonial-bg.webp",
     "items": [
       { "name": "Sarah Mitchell", "text": "The food here is absolutely amazing! Fresh ingredients, great taste and excellent service. It’s our go-to place for family dinners. Highly recommended!", "image": "/images/customer-sarah.webp", "imageAlt": "Customer Sarah Mitchell" },
       { "name": "Olivia Bennett", "text": "A lovely place with warm service and food that tastes as good as it looks. The pasta is wonderful, and we always leave planning our next visit.", "image": "/images/customer-sarah.webp", "imageAlt": "Customer Olivia Bennett" },
