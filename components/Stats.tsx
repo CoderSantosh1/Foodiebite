@@ -13,13 +13,13 @@ const stats = siteData.stats.items;
 export default function Stats() {
   return (
     <section
-      className="relative overflow-hidden bg-emerald-950 bg-center bg-no-repeat px-5 py-12 text-white sm:py-14 lg:py-16"
+      className="relative overflow-hidden bg-emerald-950 bg-center bg-no-repeat px-5 py-16 text-white sm:py-14 lg:py-16"
       style={{
         backgroundImage: `url('${siteData.stats.background}')`,
         backgroundSize: "100% 100%",
       }}
     >
-      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-2 gap-8 text-center lg:grid-cols-4 lg:gap-6">
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-10 text-center sm:gap-x-8 lg:grid-cols-4 lg:gap-6">
 
         {stats.map(({ value, label, icon }, index) => {
           const Icon = icons[icon as keyof typeof icons];
@@ -33,16 +33,16 @@ export default function Stats() {
             }`}
           >
             <Icon
-              size={48}
+              size={40}
               strokeWidth={1.8}
-              className="mb-2 text-amber-400 transition duration-300 group-hover:-translate-y-1 group-hover:scale-110"
+              className="mb-2 shrink-0 text-amber-400 transition duration-300 group-hover:-translate-y-1 group-hover:scale-110 sm:h-12 sm:w-12"
             />
 
-            <strong className="block text-4xl font-extrabold sm:text-5xl">
+            <strong className="block text-3xl font-extrabold sm:text-5xl">
               {value}
             </strong>
 
-            <span className="mt-1 text-sm font-semibold sm:text-lg">
+            <span className="mt-1 max-w-full text-xs font-semibold leading-snug sm:text-lg">
               {label}
             </span>
           </div>

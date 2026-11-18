@@ -27,7 +27,7 @@ export default function WhyUs() {
   return (
     <section
       id="why-us"
-      className="relative overflow-hidden bg-[#fff8ee] px-5 pb-10 sm:px-8  lg:px-12  mt-[-30px]"
+      className="relative mt-0 overflow-hidden bg-[#fff8ee] px-4 pb-8 sm:mt-0 sm:px-8 sm:pb-10 lg:mt-[-30px] lg:px-12"
     >
       {/* Main Container */}
       <div className="relative mx-auto max-w-[1300px]">
@@ -45,17 +45,17 @@ export default function WhyUs() {
         </div>
 
         {/* Section Heading */}
-        <div className="relative z-10 px-10 py-15">
+        <div className="relative z-10 px-1 py-8 sm:px-10 sm:py-15">
 
-          <div className="flex items-center gap-4">
-            <span className="text-xl font-bold text-[#003c2a] sm:text-2xl">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <span className="text-lg font-bold text-[#003c2a] sm:text-2xl">
               {siteData.whyUs.eyebrow}
             </span>
 
-            <span className="h-[2px] w-24 bg-[#ff9f00] sm:w-28" />
+            <span className="h-[2px] w-16 bg-[#ff9f00] sm:w-28" />
           </div>
 
-          <h2 className="mt-2 font-sans text-3xl font-extrabold leading-tight text-[#003c2a] sm:text-4xl lg:text-[50px]">
+          <h2 className="mt-2 max-w-[340px] font-sans text-[27px] font-extrabold leading-[1.12] text-[#003c2a] sm:text-4xl lg:max-w-none lg:text-[50px]">
             {siteData.whyUs.title}{" "}
             <span className="text-[#f47716]">
               {siteData.whyUs.highlight}
@@ -65,7 +65,7 @@ export default function WhyUs() {
         </div>
 
         {/* Benefits Grid */}
-        <div className="relative z-10 grid grid-cols-1 gap-y-9 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0">
+        <div className="relative z-10 grid grid-cols-1 gap-y-7 sm:grid-cols-2 sm:gap-y-9 lg:grid-cols-4 lg:gap-y-0">
 
           {benefits.map(({ title, text, icon }, index) => {
             const Icon = icons[icon as keyof typeof icons];
@@ -86,12 +86,12 @@ export default function WhyUs() {
             >
 
               {/* Icon */}
-              <div className="relative mb-3 flex size-[96px] items-center justify-center rounded-full bg-[#ffedbd] transition-transform duration-300 group-hover:-translate-y-2">
+              <div className="relative mx-auto mb-2.5 flex size-[78px] items-center justify-center rounded-full bg-[#ffedbd] transition-transform duration-300 group-hover:-translate-y-2 sm:mx-0 sm:mb-3 sm:size-[96px]">
 
                 <Icon
-                  size={61}
+                  size={48}
                   strokeWidth={1.7}
-                  className="text-[#003c2a] transition-transform duration-300 group-hover:scale-110"
+                  className="text-[#003c2a] transition-transform duration-300 group-hover:scale-110 sm:size-[61px]"
                 />
 
                 <DecorativeMarks />
@@ -99,12 +99,12 @@ export default function WhyUs() {
               </div>
 
               {/* Title */}
-              <h3 className="text-xl font-extrabold leading-tight text-[#003c2a] sm:text-[22px] lg:text-[25px]">
+              <h3 className="text-center text-lg font-extrabold leading-tight text-[#003c2a] sm:text-left sm:text-[22px] lg:text-[25px]">
                 {title}
               </h3>
 
               {/* Description */}
-              <p className="mt-2 max-w-[270px] text-base leading-[26px] text-[#343b45] sm:text-[17px] sm:leading-[26px]">
+              <p className="mx-auto mt-1.5 max-w-[270px] text-center text-sm leading-[22px] text-[#343b45] sm:mx-0 sm:mt-2 sm:text-left sm:text-[17px] sm:leading-[26px]">
                 {text}
               </p>
 
