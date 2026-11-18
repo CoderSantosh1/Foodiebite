@@ -1,24 +1,10 @@
 
 import Image from "next/image";
 import { ChefHat } from "lucide-react";
+import { siteData } from "@/data";
 
-const chefs = [
-  {
-    name: "Chef Michael Roberts",
-    role: "Head Chef",
-    image: "/images/chef-michael.webp",
-  },
-  {
-    name: "Chef Emily Carter",
-    role: "Sous Chef",
-    image: "/images/chef-emily.webp",
-  },
-  {
-    name: "Chef Daniel Mitchell",
-    role: "Pastry Chef",
-    image: "/images/chef-daniel.webp",
-  },
-];
+const teamData = siteData.team;
+const chefs = teamData.chefs;
 
 export default function Team() {
   return (
@@ -30,20 +16,20 @@ export default function Team() {
           <div className="mb-3 flex items-center justify-center gap-4">
             <span className="h-[2px] w-14 bg-[#f47716]" />
             <span className="text-base font-bold text-[#e85d12] sm:text-lg">
-              Our Team
+              {teamData.eyebrow}
             </span>
             <span className="h-[2px] w-14 bg-[#f47716]" />
           </div>
 
           <h2 className="font-serif text-3xl font-bold text-[#003c2a] sm:text-4xl lg:text-5xl">
-            Meet Our{" "}
+            {teamData.title}{" "}
             <span className="font-serif italic text-[#f47716]">
-              Expert Chefs
+              {teamData.highlight}
             </span>
           </h2>
 
           <p className="mt-4 text-base text-gray-600 sm:text-lg">
-            The talented chefs behind our delicious and diverse menu.
+            {teamData.description}
           </p>
         </div>
 

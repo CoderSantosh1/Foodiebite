@@ -3,25 +3,9 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Camera, ChevronLeft, ChevronRight } from "lucide-react";
+import { siteData } from "@/data";
 
-const galleryImages = [
-  { src: "/images/gallery-burger.png", title: "Juicy Cheeseburger" },
-  { src: "/images/gallery-pizza.png", title: "Freshly Baked Pizza" },
-  { src: "/images/gallery-pasta.png", title: "Creamy Parmesan Pasta" },
-  { src: "/images/gallery-chicken.png", title: "Crispy Fried Chicken" },
-  { src: "/images/menu-pizza.webp", title: "Wood Fired Pizza" },
-  { src: "/images/menu-burger.webp", title: "FoodieBite Burger" },
-  { src: "/images/menu-pasta.webp", title: "Italian Pasta" },
-  { src: "/images/menu-chinese.webp", title: "Chinese Favourites" },
-  { src: "/images/menu-desserts.webp", title: "Sweet Desserts" },
-  { src: "/images/menu-beverages.webp", title: "Fresh Beverages" },
-  { src: "/images/about-pizza.webp", title: "Our Signature Pizza" },
-  { src: "/images/why-pizza.webp", title: "Pizza Made with Love" },
-  { src: "/images/gallery-burger.png", title: "Classic Cheeseburger" },
-  { src: "/images/gallery-pizza.png", title: "Pepperoni Pizza" },
-  { src: "/images/gallery-pasta.png", title: "Pasta with Parmesan" },
-  { src: "/images/gallery-chicken.png", title: "Golden Fried Chicken" },
-];
+const galleryImages = siteData.gallery.images;
 
 const imagesPerPage = 4;
 const pageCount = galleryImages.length / imagesPerPage;

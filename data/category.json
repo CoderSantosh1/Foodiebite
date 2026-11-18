@@ -1,0 +1,207 @@
+{
+  "common": {
+    "site": {
+      "name": "FoodieBite",
+      "logo": "/images/logo.png",
+      "tagline": "Fine Food",
+      "description": "Discover delicious fine food from FoodieBite.",
+      "address": "Manhattan, NY 10036, USA",
+      "phone": "+1 000000000",
+      "phoneHref": "tel:+1000000000",
+      "email": "info@xyz.com",
+      "emailHref": "mailto:info@xyz.com",
+      "contactButtonLabel": "Contact Us"
+    }
+  },
+  "Navigation": [
+    { "label": "Home", "href": "#home" },
+    { "label": "About", "href": "#about" },
+    { "label": "Menu", "href": "#menu" },
+    { "label": "Why Choose Us", "href": "#why-us" },
+    { "label": "Gallery", "href": "#gallery" },
+    { "label": "Testimonials", "href": "#testimonials" },
+    { "label": "FAQ", "href": "#faqs" }
+  ],
+  "hero": {
+    "title": "Delicious Food",
+    "highlight": "Made with Love",
+    "description": "Enjoy a wide variety of freshly prepared dishes, made with quality ingredients and authentic flavors.",
+    "button": "Explore Menu",
+    "buttonHref": "/menu",
+    "image": "/images/hero-image-1.webp",
+    "imageAlt": "Freshly prepared delicious pasta with tomatoes, cheese and basil"
+  },
+  "about": {
+    "image": "/images/about-pizza.webp",
+    "imageAlt": "Freshly baked pizza with melted cheese, tomatoes and basil",
+    "established": "2017",
+    "experience": "10+",
+    "eyebrow": "ABOUT US",
+    "title": "Serving Delicious Food",
+    "highlight": "with Passion",
+    "description": "We are a passionate team of food lovers committed to serving fresh, high-quality and great-tasting meals. Our restaurant blends authentic recipes, premium ingredients and a warm, friendly atmosphere to create a memorable dining experience for every guest.",
+    "features": [
+      { "label": "Expert Chefs", "icon": "ChefHat" },
+      { "label": "Quality Ingredients", "icon": "Leaf" },
+      { "label": "Great Taste", "icon": "Utensils" }
+    ],
+    "button": "Learn More",
+    "buttonHref": "#why-us"
+  },
+  "menu": {
+    "eyebrow": "Our Menu",
+    "title": "Browse Our Delicious Menu",
+    "icon": "ForkKnife",
+    "categories": [
+      { "name": "Pizza", "image": "/images/menu-pizza.webp", "href": "#popular-dishes" },
+      { "name": "Burger", "image": "/images/menu-burger.webp", "href": "#popular-dishes" },
+      { "name": "Pasta", "image": "/images/menu-pasta.webp", "href": "#popular-dishes" },
+      { "name": "Chinese", "image": "/images/menu-chinese-new.webp", "href": "#popular-dishes" },
+      { "name": "Desserts", "image": "/images/menu-desserts-new.webp", "href": "#popular-dishes" },
+      { "name": "Beverages", "image": "/images/menu-beverages-new.webp", "href": "#popular-dishes" }
+    ]
+  },
+  "popularDishes": {
+    "eyebrow": "Our Popular Dishes",
+    "title": "Made fresh, loved by all",
+    "categories": ["Burgers", "Pizzas", "Pastas", "Chinese", "Desserts", "Beverages"],
+    "reviewLabel": "· 1.2k+ reviews",
+    "orderButton": "Order now",
+    "dishes": [
+      { "name": "Classic Cheese Burger", "category": "Burgers", "image": "/images/menu-burger.webp", "price": "199", "rating": "4.8" },
+      { "name": "Crispy Chicken Burger", "category": "Burgers", "image": "/images/menu-burger.webp", "price": "229", "rating": "4.7" },
+      { "name": "Double Decker Burger", "category": "Burgers", "image": "/images/menu-burger.webp", "price": "249", "rating": "4.6" },
+      { "name": "Garden Fresh Pizza", "category": "Pizzas", "image": "/images/menu-pizza.webp", "price": "279", "rating": "4.9" },
+      { "name": "Creamy Alfredo Pasta", "category": "Pastas", "image": "/images/menu-pasta-updated.webp", "price": "259", "rating": "4.8" },
+      { "name": "Wok Tossed Noodles", "category": "Chinese", "image": "/images/menu-chinese-new.webp", "price": "239", "rating": "4.7" },
+      { "name": "Chocolate Layer Cake", "category": "Desserts", "image": "/images/menu-desserts-new.webp", "price": "149", "rating": "4.9" },
+      { "name": "Strawberry Shake", "category": "Beverages", "image": "/images/menu-beverages-new.webp", "price": "129", "rating": "4.6" }
+    ]
+  },
+  "stats": {
+    "background": "/images/stats-bg.webp",
+    "items": [
+      { "value": "10+", "label": "Years of Excellence", "icon": "ChefHat" },
+      { "value": "25+", "label": "Restaurant Outlets", "icon": "Store" },
+      { "value": "50K+", "label": "Happy Customers", "icon": "Users" },
+      { "value": "200+", "label": "Delicious Dishes", "icon": "Utensils" }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Our Strength",
+    "title": "Why We Are The",
+    "highlight": "Best?",
+    "image": "/images/why-pizza.webp",
+    "imageAlt": "Fresh pizza slice with basil and tomatoes",
+    "benefits": [
+      { "title": "Wide Food Variety", "text": "Explore a delicious range of burgers, pizzas, pastas, Chinese and more.", "icon": "Sandwich" },
+      { "title": "Fresh Ingredients", "text": "We use high-quality, fresh ingredients to bring you great taste in every bite.", "icon": "Leaf" },
+      { "title": "Unmatched Taste", "text": "Authentic recipes, rich flavors and a perfect balance in every dish.", "icon": "ChefHat" },
+      { "title": "On-Time Delivery", "text": "Enjoy your favorite food hot, fresh and delivered right on time.", "icon": "Bike" }
+    ]
+  },
+  "team": {
+    "eyebrow": "Our Team",
+    "title": "Meet Our",
+    "highlight": "Expert Chefs",
+    "description": "The talented chefs behind our delicious and diverse menu.",
+    "chefs": [
+      { "name": "Chef Michael Roberts", "role": "Head Chef", "image": "/images/chef-michael.webp" },
+      { "name": "Chef Emily Carter", "role": "Sous Chef", "image": "/images/chef-emily.webp" },
+      { "name": "Chef Daniel Mitchell", "role": "Pastry Chef", "image": "/images/chef-daniel.webp" }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "FoodieBite",
+    "title": "A Taste of",
+    "highlight": "FoodieBite",
+    "description": "Explore our delicious creations, freshly prepared dishes and memorable dining experiences.",
+    "images": [
+      { "src": "/images/gallery-pizza.png", "title": "Delicious Pizza", "category": "Freshly Baked" },
+      { "src": "/images/gallery-burger.png", "title": "Juicy Burger", "category": "Our Special" },
+      { "src": "/images/gallery-pasta.png", "title": "Creamy Pasta", "category": "Italian Cuisine" },
+      { "src": "/images/gallery-chicken.png", "title": "Crispy Chicken", "category": "Authentic Flavours" },
+      { "src": "/images/menu-desserts.webp", "title": "Sweet Desserts", "category": "Sweet Moments" },
+      { "src": "/images/menu-beverages.webp", "title": "Refreshing Drinks", "category": "Fresh Beverages" },
+      { "src": "/images/menu-chinese.webp", "title": "Chinese Favourites", "category": "Made Fresh" },
+      { "src": "/images/about-pizza.webp", "title": "Signature Pizza", "category": "Made with Love" },
+      { "src": "/images/gallery-burger.png", "title": "Classic Cheeseburger", "category": "FoodieBite Special" },
+      { "src": "/images/gallery-pizza.png", "title": "Pepperoni Pizza", "category": "Oven Fresh" },
+      { "src": "/images/gallery-pasta.png", "title": "Parmesan Pasta", "category": "Italian Cuisine" },
+      { "src": "/images/gallery-chicken.png", "title": "Golden Fried Chicken", "category": "Customer Favourite" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "Our Customers Say",
+    "title": "Our Testimonials",
+    "background": "/images/Testmonial-bg-new.webp",
+    "items": [
+      { "name": "Sarah Mitchell", "text": "The food here is absolutely amazing! Fresh ingredients, great taste and excellent service. It’s our go-to place for family dinners. Highly recommended!", "image": "/images/customer-sarah.webp", "imageAlt": "Customer Sarah Mitchell" },
+      { "name": "Olivia Bennett", "text": "A lovely place with warm service and food that tastes as good as it looks. The pasta is wonderful, and we always leave planning our next visit.", "image": "/images/customer-sarah.webp", "imageAlt": "Customer Olivia Bennett" },
+      { "name": "Maya Thompson", "text": "Everything was fresh, full of flavor, and brought to our table right on time. FoodieBite has quickly become our favorite neighborhood restaurant.", "image": "/images/customer-sarah.webp", "imageAlt": "Customer Maya Thompson" }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Quick Answers",
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to the most common questions about our food, services, and ordering process.",
+    "image": "/images/faq-burger-new.webp",
+    "imageAlt": "Delicious burger served with crispy fries and sauce",
+    "decorationImage": "/images/faq-heading-decor.webp",
+    "items": [
+      { "question": "What are your opening hours?", "answer": "We are open daily from 11:00 AM to 11:00 PM. You can visit us for dine-in, takeaway, or place an order online anytime." },
+      { "question": "Do you offer vegetarian options?", "answer": "Yes! We offer a wide variety of delicious vegetarian dishes prepared with fresh ingredients. You can explore our menu to discover all available options." },
+      { "question": "Can I place an order online?", "answer": "Yes, you can place your order online through our website. Simply browse our menu, select your favourite dishes and proceed to checkout." },
+      { "question": "Do you provide home delivery?", "answer": "Yes, we provide home delivery services. You can order your favourite meals online and enjoy freshly prepared food at home." },
+      { "question": "What payment methods do you accept?", "answer": "We accept various payment methods, including cash, debit cards, credit cards and supported online payment options." }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Get In Touch",
+    "title": "Contact Us",
+    "description": "Have a question, feedback, or want to reserve a table? We’re here to help!",
+    "mapQuery": "FoodieBite Manhattan NY",
+    "detailsTitle": "Our Details",
+    "locationLabel": "Our Location",
+    "phoneLabel": "Call Us",
+    "emailLabel": "Email Us",
+    "socialTitle": "Follow Us",
+    "bookingTitle": "Book a Table",
+    "submitLabel": "Book a Table",
+    "form": {
+      "name": "Your Name *",
+      "email": "Your Email *",
+      "phone": "Your Phone *",
+      "date": "Booking Date *",
+      "people": "Number of People *",
+      "comment": "Your Comment *",
+      "person": "Person",
+      "peoplePlural": "People",
+      "moreThanTen": "More than 10 People"
+    },
+    "socialLinks": [
+      { "icon": "Facebook", "href": "#", "label": "Facebook" },
+      { "icon": "Instagram", "href": "#", "label": "Instagram" },
+      { "icon": "X", "href": "#", "label": "X" },
+      { "icon": "YouTube", "href": "#", "label": "YouTube" }
+    ]
+  },
+  "footer": {
+    "description": "FoodieBite is your go-to destination for delicious food, great ambiance, and memorable dining experiences. We serve a variety of cuisines made with fresh ingredients and a passion for good food.",
+    "navigation": [
+      { "name": "Home", "href": "/" },
+      { "name": "About Us", "href": "#about" },
+      { "name": "Menu", "href": "#menu" },
+      { "name": "Gallery", "href": "#gallery" },
+      { "name": "Reservations", "href": "#contact" },
+      { "name": "Contact Us", "href": "#contact" }
+    ],
+    "socialLinks": [
+      { "name": "Facebook", "href": "https://facebook.com/", "icon": "Facebook" },
+      { "name": "Instagram", "href": "https://instagram.com/", "icon": "Instagram" },
+      { "name": "X", "href": "https://x.com/", "icon": "X" },
+      { "name": "YouTube", "href": "https://youtube.com/", "icon": "YouTube" }
+    ],
+    "copyright": "All Rights Reserved. Powered by Lestow."
+  }
+}

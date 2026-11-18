@@ -5,26 +5,25 @@ import {
   Users,
   Utensils,
 } from "lucide-react";
+import { siteData } from "@/data";
 
-const stats = [
-  { value: "10+", label: "Years of Excellence", Icon: ChefHat },
-  { value: "25+", label: "Restaurant Outlets", Icon: Store },
-  { value: "50K+", label: "Happy Customers", Icon: Users },
-  { value: "200+", label: "Delicious Dishes", Icon: Utensils },
-];
+const icons = { ChefHat, Store, Users, Utensils };
+const stats = siteData.stats.items;
 
 export default function Stats() {
   return (
     <section
       className="relative overflow-hidden bg-emerald-950 bg-center bg-no-repeat px-5 py-12 text-white sm:py-14 lg:py-16"
       style={{
-        backgroundImage: "url('/images/stats-bg.webp')",
+        backgroundImage: `url('${siteData.stats.background}')`,
         backgroundSize: "100% 100%",
       }}
     >
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-2 gap-8 text-center lg:grid-cols-4 lg:gap-6">
 
-        {stats.map(({ value, label, Icon }, index) => (
+        {stats.map(({ value, label, icon }, index) => {
+          const Icon = icons[icon as keyof typeof icons];
+          return (
           <div
             key={label}
             className={`group flex flex-col items-center justify-center ${
@@ -47,7 +46,8 @@ export default function Stats() {
               {label}
             </span>
           </div>
-        ))}
+          );
+        })}
 
       </div>
     </section>

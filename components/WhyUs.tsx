@@ -8,29 +8,10 @@ import {
   Leaf,
   Sandwich,
 } from "lucide-react";
+import { siteData } from "@/data";
 
-const benefits = [
-  {
-    title: "Wide Food Variety",
-    text: "Explore a delicious range of burgers, pizzas, pastas, Chinese and more.",
-    Icon: Sandwich,
-  },
-  {
-    title: "Fresh Ingredients",
-    text: "We use high-quality, fresh ingredients to bring you great taste in every bite.",
-    Icon: Leaf,
-  },
-  {
-    title: "Unmatched Taste",
-    text: "Authentic recipes, rich flavors and a perfect balance in every dish.",
-    Icon: ChefHat,
-  },
-  {
-    title: "On-Time Delivery",
-    text: "Enjoy your favorite food hot, fresh and delivered right on time.",
-    Icon: Bike,
-  },
-];
+const icons = { Bike, ChefHat, Leaf, Sandwich };
+const benefits = siteData.whyUs.benefits;
 
 function DecorativeMarks() {
   return (
@@ -54,8 +35,8 @@ export default function WhyUs() {
         {/* Pizza Decoration */}
         <div className="pointer-events-none absolute right-0 top-[-25px] z-0 hidden h-[205px] w-[245px] xl:block 2xl:h-[225px] 2xl:w-[270px]">
           <Image
-            src="/images/why-pizza.webp"
-            alt="Fresh pizza slice with basil and tomatoes"
+            src={siteData.whyUs.image}
+            alt={siteData.whyUs.imageAlt}
             fill
             priority
             sizes="270px"
@@ -68,16 +49,16 @@ export default function WhyUs() {
 
           <div className="flex items-center gap-4">
             <span className="text-xl font-bold text-[#003c2a] sm:text-2xl">
-              Our Strength
+              {siteData.whyUs.eyebrow}
             </span>
 
             <span className="h-[2px] w-24 bg-[#ff9f00] sm:w-28" />
           </div>
 
           <h2 className="mt-2 font-sans text-3xl font-extrabold leading-tight text-[#003c2a] sm:text-4xl lg:text-[50px]">
-            Why We Are The{" "}
+            {siteData.whyUs.title}{" "}
             <span className="text-[#f47716]">
-              Best?
+              {siteData.whyUs.highlight}
             </span>
           </h2>
 
@@ -86,7 +67,9 @@ export default function WhyUs() {
         {/* Benefits Grid */}
         <div className="relative z-10 grid grid-cols-1 gap-y-9 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0">
 
-          {benefits.map(({ title, text, Icon }, index) => (
+          {benefits.map(({ title, text, icon }, index) => {
+            const Icon = icons[icon as keyof typeof icons];
+            return (
             <article
               key={title}
               className={`group relative px-1 sm:px-5 lg:px-6 ${
@@ -126,7 +109,8 @@ export default function WhyUs() {
               </p>
 
             </article>
-          ))}
+          );
+          })}
 
         </div>
 

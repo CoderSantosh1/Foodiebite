@@ -4,21 +4,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { siteData } from "@/data";
 
-const reviews = [
-  {
-    name: "Sarah Mitchell",
-    text: "The food here is absolutely amazing! Fresh ingredients, great taste and excellent service. It’s our go-to place for family dinners. Highly recommended!",
-  },
-  {
-    name: "Olivia Bennett",
-    text: "A lovely place with warm service and food that tastes as good as it looks. The pasta is wonderful, and we always leave planning our next visit.",
-  },
-  {
-    name: "Maya Thompson",
-    text: "Everything was fresh, full of flavor, and brought to our table right on time. FoodieBite has quickly become our favorite neighborhood restaurant.",
-  },
-];
+const reviews = siteData.testimonials.items;
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
@@ -34,7 +22,7 @@ export default function Testimonials() {
       id="testimonials"
       className="relative isolate overflow-hidden bg-white bg-center bg-no-repeat px-5 py-14 text-center sm:px-8 sm:py-16 lg:py-20"
       style={{
-        backgroundImage: "url('/images/Testmonial-bg.webp')",
+        backgroundImage: `url('${siteData.testimonials.background}')`,
         backgroundSize: "100% 100%",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -46,7 +34,7 @@ export default function Testimonials() {
         <div className="mb-2 flex items-center justify-center gap-4">
           <span className="h-[2px] w-10 bg-orange-500 sm:w-16" />
           <p className="text-base font-bold text-orange-700 sm:text-xl">
-            Our Customers Say
+            {siteData.testimonials.eyebrow}
           </p>
           <span className="h-[2px] w-10 bg-orange-500 sm:w-16" />
         </div>
@@ -55,7 +43,7 @@ export default function Testimonials() {
         <h2 className="font-serif text-4xl font-bold text-emerald-950 sm:text-5xl lg:text-6xl">
           Our{" "}
           <i className="relative inline-block text-orange-600">
-            Testimonials
+            {siteData.testimonials.title.replace("Our ", "")}
             <svg
               viewBox="0 0 300 20"
               className="absolute -bottom-3 left-0 h-3 w-full"
@@ -123,8 +111,8 @@ export default function Testimonials() {
         <div className="relative mx-auto mt-5 size-36 overflow-hidden rounded-full border-[5px] border-orange-400 bg-white shadow-[0_8px_18px_rgba(0,0,0,0.16)] sm:size-48">
 
           <Image
-            src="/images/customer-sarah.webp"
-            alt="Customer Sarah Mitchell"
+            src={review.image}
+            alt={review.imageAlt}
             fill
             priority
             sizes="(max-width: 640px) 144px, 192px"

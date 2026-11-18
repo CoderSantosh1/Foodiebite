@@ -4,6 +4,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { siteData } from "@/data";
 
 export default function Hero() {
   return (
@@ -31,11 +32,11 @@ export default function Hero() {
             <h1 className="font-serif text-[clamp(42px,5.8vw,94px)] font-bold leading-[1.08] tracking-tight">
 
               <span className="block whitespace-nowrap text-white">
-                Delicious Food
+                {siteData.hero.title}
               </span>
 
               <span className="mt-1 block whitespace-nowrap font-serif italic text-[#ff9f00]">
-                Made with Love
+                {siteData.hero.highlight}
               </span>
 
             </h1>
@@ -74,18 +75,17 @@ export default function Hero() {
             <span className="hidden h-[3px] w-[115px] shrink-0 bg-[#ffb900] sm:block" />
 
             <p className="max-w-[540px] text-base leading-7 text-gray-100 sm:text-lg sm:leading-8">
-              Enjoy a wide variety of freshly prepared dishes, made
-              with quality ingredients and authentic flavors.
+              {siteData.hero.description}
             </p>
 
           </div>
 
           {/* CTA Button */}
           <Link
-            href="/menu"
+            href={siteData.hero.buttonHref}
             className="mt-8 inline-flex items-center gap-5 rounded-md bg-[#ffbf27] px-7 py-4 text-base font-bold text-[#101b0d] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#ffd15c] sm:ml-[140px] sm:mt-9 sm:px-8 sm:text-lg"
           >
-            Explore Menu
+            {siteData.hero.button}
             <ArrowRight size={23} strokeWidth={2.2} />
           </Link>
 
@@ -101,8 +101,8 @@ export default function Hero() {
           <div className="relative aspect-square w-full max-w-[540px]">
 
             <Image
-              src="/images/hero-image-1.webp"
-              alt="Freshly prepared delicious pasta with tomatoes, cheese and basil"
+              src={siteData.hero.image}
+              alt={siteData.hero.imageAlt}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 540px"

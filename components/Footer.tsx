@@ -3,63 +3,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { siteData } from "@/data";
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "#about" },
-  { name: "Menu", href: "#menu" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Reservations", href: "#contact" },
-  { name: "Contact Us", href: "#contact" },
-];
+const navigation = siteData.footer.navigation;
+const socialLinks = siteData.footer.socialLinks;
 
-const socialLinks = [
-  {
-    name: "Facebook",
-    href: "https://facebook.com/",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="size-6">
-        <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.8-.1-1.6-.2-2.4-.2-2.5 0-4.2 1.5-4.2 4.4v2.3H7.4v3.2h2.8V21h3.3Z" />
-      </svg>
-    ),
-  },
-  {
-    name: "Instagram",
-    href: "https://instagram.com/",
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        className="size-6"
-      >
-        <rect x="3" y="3" width="18" height="18" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-  {
-    name: "X",
-    href: "https://x.com/",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="size-6">
-        <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-5-7.2L5.7 22H2.5l7.3-8.4L1.8 2h6.5l4.5 6.7L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z" />
-      </svg>
-    ),
-  },
-  {
-    name: "YouTube",
-    href: "https://youtube.com/",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="size-6">
-        <path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7C.5 8.9.5 12 .5 12s0 3.1.5 5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17c.5-1.9.5-5 .5-5s0-3.1-.5-5ZM9.5 15.5v-7l6 3.5-6 3.5Z" />
-      </svg>
-    ),
-  },
-];
-
+function renderSocialIcon(name: string) {
+  if (name === "Facebook") return <svg viewBox="0 0 24 24" fill="currentColor" className="size-6"><path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.8-.1-1.6-.2-2.4-.2-2.5 0-4.2 1.5-4.2 4.4v2.3H7.4v3.2h2.8V21h3.3Z" /></svg>;
+  if (name === "Instagram") return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-6"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>;
+  if (name === "X") return <svg viewBox="0 0 24 24" fill="currentColor" className="size-6"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-5-7.2L5.7 22H2.5l7.3-8.4L1.8 2h6.5l4.5 6.7L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z" /></svg>;
+  return <svg viewBox="0 0 24 24" fill="currentColor" className="size-6"><path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7C.5 8.9.5 12 .5 12s0 3.1.5 5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17c.5-1.9.5-5 .5-5s0-3.1-.5-5ZM9.5 15.5v-7l6 3.5-6 3.5Z" /></svg>;
+}
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#0b121d] px-5 text-white sm:px-8">
@@ -70,7 +24,7 @@ export default function Footer() {
         <div className="flex justify-center">
           <Link href="/" aria-label="FoodieBite Home">
             <Image
-              src="/images/logo.png"
+              src={siteData.common.site.logo}
               alt="FoodieBite"
               width={270}
               height={130}
@@ -83,11 +37,7 @@ export default function Footer() {
         {/* Description */}
         <div className="mx-auto mt-5 max-w-[1050px] text-center">
           <p className="text-sm leading-7 text-gray-100 sm:text-lg sm:leading-[30px]">
-            FoodieBite is your go-to destination for delicious food,
-            great ambiance, and memorable dining experiences.
-            <br className="hidden sm:block" />
-            We serve a variety of cuisines made with fresh ingredients
-            and a passion for good food.
+            {siteData.footer.description}
           </p>
         </div>
 
@@ -153,7 +103,7 @@ export default function Footer() {
               aria-label={social.name}
               className="flex size-11 items-center justify-center rounded-full border-2 border-[#ffb51b] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#ffb51b] hover:text-[#0b121d] sm:size-[50px]"
             >
-              {social.icon}
+              {renderSocialIcon(social.icon)}
             </a>
           ))}
 
@@ -167,7 +117,7 @@ export default function Footer() {
             <span className="font-bold text-[#ffb51b]">
               FoodieBite.
             </span>{" "}
-            All Rights Reserved. Powered by Lestow.
+            {siteData.footer.copyright}
           </p>
 
         </div>

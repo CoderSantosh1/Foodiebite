@@ -4,39 +4,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ForkKnife, Utensils } from "lucide-react";
+import { siteData } from "@/data";
 
-const menuCategories = [
-  {
-    name: "Pizza",
-    image: "/images/menu-pizza.webp",
-    href: "#popular-dishes",
-  },
-  {
-    name: "Burger",
-    image: "/images/menu-burger.webp",
-    href: "#popular-dishes",
-  },
-  {
-    name: "Pasta",
-    image: "/images/menu-pasta.webp",
-    href: "#popular-dishes",
-  },
-  {
-    name: "Chinese",
-    image: "/images/menu-chinese-new.webp",
-    href: "#popular-dishes",
-  },
-  {
-    name: "Desserts",
-    image: "/images/menu-desserts-new.webp",
-    href: "#popular-dishes",
-  },
-  {
-    name: "Beverages",
-    image: "/images/menu-beverages-new.webp",
-    href: "#popular-dishes",
-  },
-];
+const menuCategories = siteData.menu.categories;
+const menuHeaderIcons = { ForkKnife, Utensils };
+const MenuHeaderIcon = menuHeaderIcons[siteData.menu.icon as keyof typeof menuHeaderIcons];
 
 export default function OurMenu() {
   return (
@@ -53,7 +25,7 @@ export default function OurMenu() {
           <div className="mb-2 flex items-center justify-center gap-4">
             <span className="h-[2px] w-16 bg-[#f47716] sm:w-24" />
 
-            <ForkKnife
+            <MenuHeaderIcon
               size={35}
               strokeWidth={2.2}
               className="text-[#f47716]"
@@ -64,12 +36,12 @@ export default function OurMenu() {
 
           {/* Script Heading */}
           <p className="font-serif text-3xl font-bold italic text-[#e87522] sm:text-4xl">
-            Our Menu
+            {siteData.menu.eyebrow}
           </p>
 
           {/* Main Heading */}
           <h2 className="mt-1 font-serif text-3xl font-bold leading-tight text-[#00271e] sm:text-4xl lg:text-[46px]">
-            Browse Our Delicious Menu
+            {siteData.menu.title}
           </h2>
 
         </div>
@@ -99,7 +71,7 @@ export default function OurMenu() {
 
               {/* Category Name */}
               <h3 className="mt-2 text-center font-serif text-lg font-bold text-[#00271e] sm:text-xl">
-                {category.name}
+              {category.name}
               </h3>
 
               {/* Orange Underline */}

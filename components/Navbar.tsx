@@ -3,21 +3,19 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ChefHat, Phone, Menu, X } from "lucide-react";
+import {  Phone, Menu, X } from "lucide-react";
 import Image from "next/image";
-const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About Us", href: "#about" },
-  { name: "Our Menu", href: "#menu" },
-  { name: "Why Choose Us", href: "#why-us" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Faqs", href: "#faqs" },
-];
+import  CategoryData  from "../data/category.json";
+
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#home");
+  
+  //Json data for navigation links
+  const navLinks = CategoryData.Navigation;
+
+
 
   useEffect(() => {
     const updateActiveSection = () => {
@@ -54,7 +52,7 @@ export default function Navbar() {
             className="relative flex shrink-0 items-center"
             >
             <Image
-                src="/images/logo.png"
+                src={CategoryData.common.site.logo}
                 alt="FoodieBite Logo"
                 width={190}
                 height={75}
@@ -67,7 +65,7 @@ export default function Navbar() {
 
           {navLinks.map((item) => (
             <Link
-              key={item.name}
+              key={item.label}
               href={item.href}
               aria-current={activeSection === item.href ? "location" : undefined}
               onClick={() => setActiveSection(item.href)}
@@ -77,7 +75,7 @@ export default function Navbar() {
                   : "text-white"
               }`}
             >
-              {item.name}
+              {item.label}
             </Link>
           ))}
 
@@ -89,7 +87,7 @@ export default function Navbar() {
           className="hidden shrink-0 items-center gap-2.5 rounded-full bg-[#ffbf27] px-5 py-3 text-sm font-bold text-[#101b0d] shadow-sm transition-all duration-300 hover:bg-[#ffd15c] xl:inline-flex 2xl:px-6"
         >
           <Phone size={19} strokeWidth={2} />
-          Contact Us
+          {CategoryData.common.site.contactButtonLabel}
         </Link>
 
         {/* Mobile Menu Button */}
@@ -116,7 +114,7 @@ export default function Navbar() {
 
           {navLinks.map((item) => (
             <Link
-              key={item.name}
+              key={item.label}
               href={item.href}
               onClick={() => {
                 setMenuOpen(false);
@@ -127,7 +125,7 @@ export default function Navbar() {
                 activeSection === item.href ? "text-[#ffb900]" : "text-white"
               }`}
             >
-              {item.name}
+              {item.label}
             </Link>
           ))}
 
@@ -137,7 +135,7 @@ export default function Navbar() {
             className="mt-4 flex items-center justify-center gap-2 rounded-full bg-[#ffbf27] px-5 py-3.5 text-sm font-bold text-[#101b0d] transition hover:bg-[#ffd15c]"
           >
             <Phone size={18} />
-            Contact Us
+            {CategoryData.common.site.contactButtonLabel}
           </Link>
 
         </nav>

@@ -4,34 +4,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import { siteData } from "@/data";
 
-const faqs = [
-  {
-    question: "What are your opening hours?",
-    answer:
-      "We are open daily from 11:00 AM to 11:00 PM. You can visit us for dine-in, takeaway, or place an order online anytime.",
-  },
-  {
-    question: "Do you offer vegetarian options?",
-    answer:
-      "Yes! We offer a wide variety of delicious vegetarian dishes prepared with fresh ingredients. You can explore our menu to discover all available options.",
-  },
-  {
-    question: "Can I place an order online?",
-    answer:
-      "Yes, you can place your order online through our website. Simply browse our menu, select your favourite dishes and proceed to checkout.",
-  },
-  {
-    question: "Do you provide home delivery?",
-    answer:
-      "Yes, we provide home delivery services. You can order your favourite meals online and enjoy freshly prepared food at home.",
-  },
-  {
-    question: "What payment methods do you accept?",
-    answer:
-      "We accept various payment methods, including cash, debit cards, credit cards and supported online payment options.",
-  },
-];
+const faqData = siteData.faq;
+const faqs = faqData.items;
 
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
@@ -50,7 +26,7 @@ export default function FAQ() {
           <div
             className="pointer-events-none absolute inset-x-0 -top-5 hidden h-[190px] bg-top bg-no-repeat lg:block"
             style={{
-              backgroundImage: "url('/images/faq-heading-decor.webp')",
+              backgroundImage: `url('${faqData.decorationImage}')`,
               backgroundSize: "100% 235px",
             }}
             aria-hidden="true"
@@ -62,7 +38,7 @@ export default function FAQ() {
             <span className="h-[2px] w-16 bg-[#f47716] sm:w-20" />
 
             <span className="whitespace-nowrap text-lg font-bold text-[#e85d12] sm:text-2xl">
-              Quick Answers
+              {faqData.eyebrow}
             </span>
 
             <span className="h-[2px] w-16 bg-[#f47716] sm:w-20" />
@@ -71,7 +47,7 @@ export default function FAQ() {
 
           {/* Main Heading */}
           <h2 className="relative z-10 font-serif text-[30px] font-bold leading-[1.2] text-[#003c2a] sm:text-[42px] lg:text-[52px]">
-            Frequently Asked{" "}
+            {faqData.title.replace(" Questions", "")}{" "}
             <span className="relative inline-block font-serif italic text-[#e85d12]">
               Questions
 
@@ -95,9 +71,7 @@ export default function FAQ() {
 
           {/* Description */}
           <p className="relative z-10 mx-auto mt-7 max-w-[650px] text-base leading-7 text-[#465365] sm:text-lg sm:leading-8">
-            Find answers to the most common questions about our food,
-            <br className="hidden sm:block" />
-            services, and ordering process.
+            {faqData.description}
           </p>
 
         </div>
@@ -111,8 +85,8 @@ export default function FAQ() {
             <div className="relative aspect-[0.9/1] w-full overflow-hidden rounded-[30px] border-[7px] border-white bg-[#fff4e9] shadow-[0_8px_20px_rgba(0,0,0,0.17)]">
 
               <Image
-                src="/images/faq-burger-new.webp"
-                alt="Delicious burger served with crispy fries and sauce"
+                src={faqData.image}
+                alt={faqData.imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 480px"
                 className="object-cover object-center"

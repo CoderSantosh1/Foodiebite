@@ -9,6 +9,10 @@ import {
   Leaf,
   Utensils,
 } from "lucide-react";
+import { siteData } from "@/data";
+
+const aboutIcons = { ChefHat, Leaf, Utensils };
+const aboutData = siteData.about;
 
 export default function AboutUs() {
   return (
@@ -25,8 +29,8 @@ export default function AboutUs() {
           <div className="relative aspect-[1.15/1] w-full">
 
             <Image
-              src="/images/about-pizza.webp"
-              alt="Freshly baked pizza with melted cheese, tomatoes and basil"
+              src={aboutData.image}
+              alt={aboutData.imageAlt}
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 600px"
@@ -83,7 +87,7 @@ export default function AboutUs() {
             <span className="relative text-center text-xl font-bold leading-7 text-[#171717] sm:text-2xl">
               EST.
               <br />
-              2017
+              {aboutData.established}
             </span>
 
             {/* EST Badge Decorative Lines */}
@@ -120,7 +124,7 @@ export default function AboutUs() {
           <div className="absolute -bottom-3 left-0 z-10 flex size-[145px] flex-col items-center justify-center rounded-full border-[5px] border-white bg-[#171717] text-center text-white shadow-xl sm:-bottom-3 sm:left-2 sm:size-[175px]">
 
             <span className="font-serif text-4xl font-bold text-[#ffb323] sm:text-5xl">
-              10+
+              {aboutData.experience}
             </span>
 
             <span className="mt-1 text-base font-bold leading-5 sm:text-lg sm:leading-6">
@@ -139,7 +143,7 @@ export default function AboutUs() {
           {/* Small Heading */}
           <div className="mb-3 flex items-center gap-4">
             <span className="text-sm font-bold tracking-[2px] text-[#e87512] sm:text-base">
-              ABOUT US
+              {aboutData.eyebrow}
             </span>
 
             <span className="h-[2px] w-12 bg-[#f59e0b]" />
@@ -147,79 +151,38 @@ export default function AboutUs() {
 
           {/* Main Heading */}
           <h2 className="font-serif text-4xl font-bold leading-[1.15] text-[#171717] sm:text-5xl lg:text-[48px]">
-            Serving Delicious Food
+            {aboutData.title}
 
             <span className="mt-1 block font-serif italic text-[#e87512]">
-              with Passion
+              {aboutData.highlight}
             </span>
           </h2>
 
           {/* Description */}
           <p className="mt-6 text-base leading-7 text-[#424242] sm:text-[17px] sm:leading-[29px]">
-            We are a passionate team of food lovers committed to serving
-            fresh, high-quality and great-tasting meals. Our restaurant
-            blends authentic recipes, premium ingredients and a warm,
-            friendly atmosphere to create a memorable dining experience
-            for every guest.
+            {aboutData.description}
           </p>
 
           {/* Features */}
           <div className="mt-8 grid grid-cols-3 divide-x divide-gray-300">
-
-            {/* Expert Chefs */}
-            <div className="flex flex-col items-center gap-3 px-2 py-2 sm:flex-row sm:gap-4 sm:px-4">
-              <ChefHat
-                size={49}
-                strokeWidth={1.8}
-                className="shrink-0 text-[#ffad16] sm:size-[55px]"
-              />
-
-              <span className="text-center text-xs font-bold leading-5 text-[#171717] sm:text-left sm:text-base sm:leading-6">
-                Expert
-                <br />
-                Chefs
-              </span>
-            </div>
-
-            {/* Quality Ingredients */}
-            <div className="flex flex-col items-center gap-3 px-2 py-2 sm:flex-row sm:gap-4 sm:px-4">
-              <Leaf
-                size={49}
-                strokeWidth={1.8}
-                className="shrink-0 text-[#ffad16] sm:size-[55px]"
-              />
-
-              <span className="text-center text-xs font-bold leading-5 text-[#171717] sm:text-left sm:text-base sm:leading-6">
-                Quality
-                <br />
-                Ingredients
-              </span>
-            </div>
-
-            {/* Great Taste */}
-            <div className="flex flex-col items-center gap-3 px-2 py-2 sm:flex-row sm:gap-4 sm:px-4">
-              <Utensils
-                size={49}
-                strokeWidth={1.8}
-                className="shrink-0 text-[#ffad16] sm:size-[55px]"
-              />
-
-              <span className="text-center text-xs font-bold leading-5 text-[#171717] sm:text-left sm:text-base sm:leading-6">
-                Great
-                <br />
-                Taste
-              </span>
-            </div>
-
+            {aboutData.features.map((feature) => {
+              const Icon = aboutIcons[feature.icon as keyof typeof aboutIcons];
+              return (
+                <div key={feature.label} className="flex flex-col items-center gap-3 px-2 py-2 sm:flex-row sm:gap-4 sm:px-4">
+                  <Icon size={49} strokeWidth={1.8} className="shrink-0 text-[#ffad16] sm:size-[55px]" />
+                  <span className="text-center text-xs font-bold leading-5 text-[#171717] sm:text-left sm:text-base sm:leading-6">{feature.label}</span>
+                </div>
+              );
+            })}
           </div>
 
           {/* Learn More Button */}
           <div className="mt-9">
             <Link
-              href="#why-us"
+              href={aboutData.buttonHref}
               className="inline-flex items-center justify-center gap-4 rounded-full bg-[#ffb51b] px-8 py-4 text-base font-bold text-[#171717] transition-all duration-300 hover:-translate-y-1 hover:bg-[#f59e0b] sm:px-9 sm:text-lg"
             >
-              Learn More
+              {aboutData.button}
               <ArrowRight size={23} />
             </Link>
           </div>
