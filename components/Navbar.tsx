@@ -2,11 +2,11 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChefHat, Phone, Menu, X } from "lucide-react";
 import Image from "next/image";
 const navLinks = [
-  { name: "Home", href: "#home", active: true },
+  { name: "Home", href: "#home" },
   { name: "About Us", href: "#about" },
   { name: "Our Menu", href: "#menu" },
   { name: "Why Choose Us", href: "#why-us" },
@@ -17,6 +17,31 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("#home");
+
+  useEffect(() => {
+    const updateActiveSection = () => {
+      const marker = window.scrollY + 130;
+      let currentHref = "";
+      navLinks.forEach((item) => {
+        const section = document.getElementById(item.href.slice(1));
+        if (!section) return;
+        const top = section.getBoundingClientRect().top + window.scrollY;
+        const bottom = top + section.offsetHeight;
+        if (marker >= top && marker < bottom) currentHref = item.href;
+      });
+
+      setActiveSection(currentHref);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("hashchange", updateActiveSection);
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("hashchange", updateActiveSection);
+    };
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full border-y border-[#294b3c] bg-[#001b12]/95 text-white backdrop-blur">
@@ -44,8 +69,10 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
+              aria-current={activeSection === item.href ? "location" : undefined}
+              onClick={() => setActiveSection(item.href)}
               className={`relative whitespace-nowrap py-3 text-[16px] font-semibold transition-colors duration-300 hover:text-[#ffb900] ${
-                item.active
+                activeSection === item.href
                   ? "text-[#ffb900] after:absolute after:bottom-[-7px] after:left-0 after:h-[3px] after:w-full after:bg-[#ffb900]"
                   : "text-white"
               }`}
@@ -91,9 +118,13 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                setActiveSection(item.href);
+              }}
+              aria-current={activeSection === item.href ? "location" : undefined}
               className={`border-b border-white/10 py-3.5 text-sm font-semibold transition hover:text-[#ffb900] ${
-                item.active ? "text-[#ffb900]" : "text-white"
+                activeSection === item.href ? "text-[#ffb900]" : "text-white"
               }`}
             >
               {item.name}

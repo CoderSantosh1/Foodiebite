@@ -1,27 +1,107 @@
+
 import Image from "next/image";
 import { ChefHat } from "lucide-react";
 
 const chefs = [
-  { name: "Chef Michael Roberts", role: "Head Chef", image: "/images/menu-pizza.webp" },
-  { name: "Chef Emily Carter", role: "Sous Chef", image: "/images/menu-pasta-updated.webp" },
-  { name: "Chef Daniel Mitchell", role: "Pastry Chef", image: "/images/menu-desserts-new.webp" },
+  {
+    name: "Chef Michael Roberts",
+    role: "Head Chef",
+    image: "/images/chef-michael.webp",
+  },
+  {
+    name: "Chef Emily Carter",
+    role: "Sous Chef",
+    image: "/images/chef-emily.webp",
+  },
+  {
+    name: "Chef Daniel Mitchell",
+    role: "Pastry Chef",
+    image: "/images/chef-daniel.webp",
+  },
 ];
 
 export default function Team() {
   return (
-    <section className="bg-[#fffaf5] px-5 py-16 sm:px-8">
-      <div className="mx-auto max-w-7xl text-center">
-        <p className="font-bold text-orange-600">OUR TEAM</p>
-        <h2 className="mt-2 font-serif text-4xl font-bold text-emerald-950">Meet Our <i className="text-orange-600">Expert Chefs</i></h2>
-        <p className="mt-3 text-slate-600">The talented chefs behind our delicious and diverse menu.</p>
-        <div className="mt-9 grid gap-5 sm:grid-cols-3">
+    <section className="relative overflow-hidden bg-[#fffaf5] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+      <div className="mx-auto max-w-[1250px]">
+
+        {/* Section Heading */}
+        <div className="mb-10 text-center sm:mb-14">
+          <div className="mb-3 flex items-center justify-center gap-4">
+            <span className="h-[2px] w-14 bg-[#f47716]" />
+            <span className="text-base font-bold text-[#e85d12] sm:text-lg">
+              Our Team
+            </span>
+            <span className="h-[2px] w-14 bg-[#f47716]" />
+          </div>
+
+          <h2 className="font-serif text-3xl font-bold text-[#003c2a] sm:text-4xl lg:text-5xl">
+            Meet Our{" "}
+            <span className="font-serif italic text-[#f47716]">
+              Expert Chefs
+            </span>
+          </h2>
+
+          <p className="mt-4 text-base text-gray-600 sm:text-lg">
+            The talented chefs behind our delicious and diverse menu.
+          </p>
+        </div>
+
+        {/* Chef Cards */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {chefs.map((chef) => (
-            <article key={chef.name} className="overflow-hidden rounded-3xl bg-white shadow-lg transition hover:-translate-y-2">
-              <div className="relative h-64 bg-orange-50"><Image src={chef.image} alt={`${chef.name} specialty`} fill sizes="33vw" className="object-contain p-5" /></div>
-              <div className="p-5"><ChefHat className="mx-auto -mt-9 mb-2 rounded-full bg-orange-500 p-2 text-white" size={42} /><h3 className="text-xl font-extrabold text-emerald-950">{chef.name}</h3><p className="mt-1 text-slate-600">{chef.role}</p></div>
+            <article
+              key={chef.name}
+              className="group relative overflow-hidden rounded-[28px] bg-[#fffaf5] shadow-[0_8px_20px_rgba(0,0,0,0.09)] transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+            >
+
+              {/* Complete Chef Image */}
+              <div className="relative h-[350px] overflow-hidden bg-[#fffaf5] sm:h-[370px] lg:h-[350px]">
+
+                <Image
+                  src={chef.image}
+                  alt={chef.name}
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+
+              </div>
+
+              {/* Curved White Content */}
+              <div className="relative -mt-[42px] bg-[#fffaf5] px-4 pb-7 pt-[48px] text-center">
+
+                {/* Curved Top */}
+                <div className="pointer-events-none absolute -top-[34px] left-[-10%] h-[70px] w-[120%] rounded-[50%] bg-[#fffaf5]" />
+
+                {/* Chef Icon */}
+                <div className="absolute left-1/2 top-[-30px] z-20 flex size-[64px] -translate-x-1/2 items-center justify-center rounded-full border-[5px] border-[#fff0df] bg-[#f47716] shadow-md transition-transform duration-300 group-hover:scale-110">
+                  <ChefHat
+                    size={32}
+                    strokeWidth={2}
+                    className="text-white"
+                  />
+                </div>
+
+                {/* Name */}
+                <h3 className="relative z-10 font-serif text-xl font-bold text-[#003c2a] sm:text-2xl">
+                  {chef.name}
+                </h3>
+
+                {/* Role */}
+                <p className="relative z-10 mt-2 text-base font-medium text-gray-600">
+                  {chef.role}
+                </p>
+
+                {/* Bottom Line */}
+                <div className="mx-auto mt-4 h-[4px] w-14 rounded-full bg-[#ff9f00]" />
+
+              </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );
