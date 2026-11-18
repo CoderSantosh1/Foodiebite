@@ -75,7 +75,7 @@ export default function Testimonials() {
             type="button"
             onClick={() => change(-1)}
             aria-label="Previous testimonial"
-            className="absolute left-0 top-1/2 flex size-12 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-400 bg-white text-emerald-900 transition hover:bg-orange-500 hover:text-white sm:left-2 sm:size-14"
+            className="absolute left-0 top-1/2 z-20 flex size-12 -translate-y-1/2 touch-manipulation items-center justify-center rounded-full border-2 border-orange-400 bg-white text-emerald-900 transition hover:bg-orange-500 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 sm:left-2 sm:size-14"
           >
             <ChevronLeft size={30} />
           </button>
@@ -91,7 +91,7 @@ export default function Testimonials() {
             type="button"
             onClick={() => change(1)}
             aria-label="Next testimonial"
-            className="absolute right-0 top-1/2 flex size-12 -translate-y-1/2 items-center justify-center rounded-full border-2 border-orange-400 bg-white text-emerald-900 transition hover:bg-orange-500 hover:text-white sm:right-2 sm:size-14"
+            className="absolute right-0 top-1/2 z-20 flex size-12 -translate-y-1/2 touch-manipulation items-center justify-center rounded-full border-2 border-orange-400 bg-white text-emerald-900 transition hover:bg-orange-500 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 sm:right-2 sm:size-14"
           >
             <ChevronRight size={30} />
           </button>
@@ -108,13 +108,13 @@ export default function Testimonials() {
         </div>
 
         {/* Actual Customer Portrait */}
-        <div className="relative mx-auto mt-5 size-36 overflow-hidden rounded-full border-[5px] border-orange-400 bg-white shadow-[0_8px_18px_rgba(0,0,0,0.16)] sm:size-48">
+        <div key={review.name} className="relative mx-auto mt-5 size-36 overflow-hidden rounded-full border-[5px] border-orange-400 bg-white shadow-[0_8px_18px_rgba(0,0,0,0.16)] sm:size-48">
 
           <Image
             src={review.image}
             alt={review.imageAlt}
             fill
-            priority
+            priority={active === 0}
             sizes="(max-width: 640px) 144px, 192px"
             className="rounded-full object-cover object-center"
           />

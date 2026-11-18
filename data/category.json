@@ -137,8 +137,10 @@
     "background": "/images/Testmonial-bg.webp",
     "items": [
       { "name": "Sarah Mitchell", "text": "The food here is absolutely amazing! Fresh ingredients, great taste and excellent service. It’s our go-to place for family dinners. Highly recommended!", "image": "/images/customer-sarah.webp", "imageAlt": "Customer Sarah Mitchell" },
-      { "name": "Olivia Bennett", "text": "A lovely place with warm service and food that tastes as good as it looks. The pasta is wonderful, and we always leave planning our next visit.", "image": "/images/customer-sarah.webp", "imageAlt": "Customer Olivia Bennett" },
-      { "name": "Maya Thompson", "text": "Everything was fresh, full of flavor, and brought to our table right on time. FoodieBite has quickly become our favorite neighborhood restaurant.", "image": "/images/customer-sarah.webp", "imageAlt": "Customer Maya Thompson" }
+      { "name": "Olivia Bennett", "text": "A lovely place with warm service and food that tastes as good as it looks. The pasta is wonderful, and we always leave planning our next visit.", "image": "/images/customer-ava.png", "imageAlt": "Customer Olivia Bennett" },
+      { "name": "Maya Thompson", "text": "Everything was fresh, full of flavor, and brought to our table right on time. FoodieBite has quickly become our favorite neighborhood restaurant.", "image": "/images/customer-sarah.webp", "imageAlt": "Customer Maya Thompson" },
+      { "name": "Ava Rodriguez", "text": "We had a wonderful evening. The food was delicious, the portions were generous, and the team made us feel right at home.", "image": "/images/customer-ava.png", "imageAlt": "Customer Ava Rodriguez" },
+      { "name": "James Carter", "text": "Fantastic flavors and friendly service every time. It is now our first choice for dinner with friends.", "image": "/images/customer-james.png", "imageAlt": "Customer James Carter" }
     ]
   },
   "faq": {
