@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Star } from "lucide-react";
+import { ChevronDown, Star } from "lucide-react";
 import { siteData } from "@/data";
 
 const categories = siteData.popularDishes.categories;
@@ -23,16 +23,22 @@ export default function PopularDishes() {
           <label htmlFor="popular-dishes-category" className="sr-only">
             Filter popular dishes by category
           </label>
-          <select
-            id="popular-dishes-category"
-            value={activeCategory}
-            onChange={(event) => setActiveCategory(event.target.value)}
-            className="w-full rounded-full border border-orange-200 bg-orange-50 px-4 py-3 text-sm font-bold text-emerald-950 sm:hidden"
-          >
-            {categories.map((category) => (
-              <option key={category} value={category}>{category}</option>
-            ))}
-          </select>
+          <div className="relative sm:hidden">
+            <select
+              id="popular-dishes-category"
+              value={activeCategory}
+              onChange={(event) => setActiveCategory(event.target.value)}
+              className="w-full appearance-none rounded-full border border-orange-200 bg-orange-50 px-4 py-3 pr-10 text-sm font-bold text-emerald-950"
+            >
+              {categories.map((category) => (
+                <option key={category} value={category}>{category}</option>
+              ))}
+            </select>
+            <ChevronDown
+              aria-hidden="true"
+              className="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-emerald-950"
+            />
+          </div>
         </div>
         <div className="mb-8 hidden flex-wrap justify-center gap-2 sm:flex">
           {categories.map((category) => (
