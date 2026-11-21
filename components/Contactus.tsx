@@ -69,7 +69,6 @@ export default function ContactSection() {
             </span>
           </h1>
 
-          <div className="mx-auto mt-3 h-1 w-24 -rotate-3 rounded-full bg-[#c9820b] sm:w-28" />
 
           <p className="mx-auto mt-4 max-w-5xl px-2 text-base leading-relaxed text-[#34495a] sm:text-lg md:text-2xl">
             {contactData.description}

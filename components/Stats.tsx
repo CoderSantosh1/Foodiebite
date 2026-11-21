@@ -32,19 +32,21 @@ export default function Stats() {
                 : ""
             }`}
           >
-            <Icon
-              size={40}
-              strokeWidth={1.8}
-              className="mb-2 shrink-0 text-amber-400 transition duration-300 group-hover:-translate-y-1 group-hover:scale-110 sm:h-12 sm:w-12"
-            />
+            <div className={`flex flex-col items-center ${index === 3 ? "-translate-y-1 sm:translate-y-0" : ""}`}>
+              <Icon
+                size={32}
+                strokeWidth={1.8}
+                className="mb-2 shrink-0 text-amber-400 transition duration-300 group-hover:-translate-y-1 group-hover:scale-110 sm:h-12 sm:w-12"
+              />
 
-            <strong className="block text-3xl font-extrabold sm:text-5xl">
-              {value}
-            </strong>
+              <strong className="block text-3xl font-extrabold sm:text-5xl">
+                {value}
+              </strong>
 
-            <span className="mt-1 max-w-full text-xs font-semibold leading-snug sm:text-lg">
-              {label}
-            </span>
+              <span className="mt-1 max-w-full text-xs font-semibold leading-snug sm:text-lg">
+                {label}
+              </span>
+            </div>
           </div>
           );
         })}

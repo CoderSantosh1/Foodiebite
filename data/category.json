@@ -27,7 +27,7 @@
     "highlight": "Made with Love",
     "description": "Enjoy a wide variety of freshly prepared dishes, made with quality ingredients and authentic flavors.",
     "button": "Explore Menu",
-    "buttonHref": "/menu",
+    "buttonHref": "#popular-dishes",
     "image": "/images/hero-image-1.webp",
     "imageAlt": "Freshly prepared delicious pasta with tomatoes, cheese and basil"
   },

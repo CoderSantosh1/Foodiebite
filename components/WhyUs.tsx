@@ -27,7 +27,7 @@ export default function WhyUs() {
   return (
     <section
       id="why-us"
-      className="relative mt-0 overflow-hidden bg-[#fff8ee] px-4 pb-8 sm:mt-0 sm:px-8 sm:pb-10 lg:mt-[-30px] lg:px-12"
+      className="relative mt-0 overflow-hidden bg-[#fff8ee] px-4 pb-6 sm:mt-0 sm:px-8 sm:pb-8 lg:mt-[-30px] lg:px-12"
     >
       {/* Main Container */}
       <div className="relative mx-auto max-w-[1300px]">
@@ -45,7 +45,7 @@ export default function WhyUs() {
         </div>
 
         {/* Section Heading */}
-        <div className="relative z-10 px-1 py-8 sm:px-10 sm:py-15">
+        <div className="relative z-10 px-1 py-6 sm:px-10 sm:py-10">
 
           <div className="flex items-center gap-3 sm:gap-4">
             <span className="text-lg font-bold text-[#003c2a] sm:text-2xl">

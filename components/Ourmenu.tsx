@@ -14,12 +14,12 @@ export default function OurMenu() {
   return (
     <section
       id="menu"
-      className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 lg:px-10 lg:py-10"
+      className="relative overflow-hidden bg-white px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:py-12"
     >
       <div className="mx-auto max-w-[1350px]">
 
         {/* Section Heading */}
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center sm:mb-10">
 
           {/* Decorative Icon */}
           <div className="mb-2 flex items-center justify-center gap-4">

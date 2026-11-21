@@ -37,9 +37,9 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-white px-5 py-16 sm:px-8 lg:px-12 lg:py-24"
+      className="relative overflow-hidden bg-white px-5 py-12 sm:px-8 sm:py-14 lg:px-12 lg:py-16"
     >
-      <div className="mx-auto grid max-w-[1350px] items-center gap-12 lg:grid-cols-2 lg:gap-14">
+      <div className="mx-auto grid max-w-[1350px] items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
 
         {/* Left Image Section */}
         <motion.div
@@ -206,7 +206,7 @@ export default function AboutUs() {
           {/* Main Heading */}
           <motion.h2
             variants={fadeUp}
-            className="font-serif text-4xl font-bold leading-[1.15] text-[#171717] sm:text-5xl lg:text-[48px]"
+            className="font-serif text-2xl font-bold leading-[1.15] tracking-tight text-[#171717] sm:text-5xl lg:text-[48px]"
           >
             {aboutData.title}
             <span className="mt-1 block font-serif italic text-[#e87512]">

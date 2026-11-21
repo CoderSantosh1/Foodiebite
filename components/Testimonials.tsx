@@ -20,14 +20,13 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative isolate overflow-hidden bg-white bg-center bg-no-repeat px-5 py-14 text-center sm:px-8 sm:py-16 lg:py-20"
-      style={{
-        backgroundImage: `url('${siteData.testimonials.background}')`,
-        backgroundSize: "100% 100%",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="relative isolate overflow-hidden bg-[#fff8ee] px-5 py-10 text-center sm:px-8 sm:py-12 lg:py-14"
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-20"
+        style={{ backgroundImage: `url('${siteData.testimonials.background}')` }}
+      />
       <div className="relative z-10 mx-auto max-w-5xl">
 
         {/* Section Label */}
@@ -62,7 +61,7 @@ export default function Testimonials() {
         </h2>
 
         {/* Quote Decoration */}
-        <div className="mt-8 flex items-center justify-center gap-4 text-orange-400">
+        <div className="mt-5 flex items-center justify-center gap-4 text-orange-400 sm:mt-8">
           <span className="h-px w-20 bg-orange-200 sm:w-28" />
           <span className="font-serif text-6xl leading-none">“</span>
           <span className="h-px w-20 bg-orange-200 sm:w-28" />
@@ -82,7 +81,7 @@ export default function Testimonials() {
 
           <blockquote
             key={review.name}
-            className="mx-12 max-w-4xl text-base leading-7 text-gray-800 sm:mx-20 sm:text-xl sm:leading-9"
+            className="mx-12 max-w-4xl text-sm leading-6 text-gray-800 sm:mx-20 sm:text-xl sm:leading-9"
           >
             “{review.text}”
           </blockquote>
@@ -98,7 +97,7 @@ export default function Testimonials() {
         </div>
 
         {/* Customer Name Ribbon */}
-        <div className="relative mx-auto mt-7 w-fit">
+        <div className="relative mx-auto mt-5 w-fit sm:mt-7">
           <div className="relative z-10 rounded-[45%_8%_45%_8%] border-2 border-emerald-800 bg-emerald-800 px-10 py-2 text-lg font-bold text-white shadow-md sm:px-14 sm:text-2xl">
             <span className="absolute inset-1 rounded-[45%_8%_45%_8%] border border-dashed border-white/70" />
             <span className="relative">— {review.name}</span>
@@ -108,7 +107,7 @@ export default function Testimonials() {
         </div>
 
         {/* Actual Customer Portrait */}
-        <div key={review.name} className="relative mx-auto mt-5 size-36 overflow-hidden rounded-full border-[5px] border-orange-400 bg-white shadow-[0_8px_18px_rgba(0,0,0,0.16)] sm:size-48">
+        <div key={review.name} className="relative mx-auto mt-4 size-32 overflow-hidden rounded-full border-[5px] border-orange-400 bg-white shadow-[0_8px_18px_rgba(0,0,0,0.16)] sm:mt-5 sm:size-48">
 
           <Image
             src={review.image}

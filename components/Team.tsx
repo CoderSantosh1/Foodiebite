@@ -8,11 +8,11 @@ const chefs = teamData.chefs;
 
 export default function Team() {
   return (
-    <section className="relative overflow-hidden bg-[#fffaf5] px-5 py-16 sm:px-8 lg:px-12 lg:py-24">
+    <section className="relative overflow-hidden bg-[#fffaf5] px-5 py-12 sm:px-8 sm:py-14 lg:px-12 lg:py-16">
       <div className="mx-auto max-w-[1250px]">
 
         {/* Section Heading */}
-        <div className="mb-10 text-center sm:mb-14">
+        <div className="mb-8 text-center sm:mb-10">
           <div className="mb-3 flex items-center justify-center gap-4">
             <span className="h-[2px] w-14 bg-[#f47716]" />
             <span className="text-base font-bold text-[#e85d12] sm:text-lg">
@@ -34,7 +34,7 @@ export default function Team() {
         </div>
 
         {/* Chef Cards */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {chefs.map((chef) => (
             <article
               key={chef.name}
@@ -42,7 +42,7 @@ export default function Team() {
             >
 
               {/* Complete Chef Image */}
-              <div className="relative h-[350px] overflow-hidden bg-[#fffaf5] sm:h-[370px] lg:h-[350px]">
+              <div className="relative h-[390px] overflow-hidden bg-[#fffaf5] sm:h-[400px] lg:h-[360px]">
 
                 <Image
                   src={chef.image}
@@ -50,7 +50,7 @@ export default function Team() {
                   fill
                   priority
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.02]"
+                  className="object-contain object-top transition-transform duration-700 group-hover:scale-[1.02]"
                 />
 
               </div>

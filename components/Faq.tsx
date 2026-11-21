@@ -15,12 +15,12 @@ export default function FAQ() {
   return (
     <section
       id="faqs"
-      className="relative overflow-hidden bg-white px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20"
+      className="relative overflow-hidden bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-14"
     >
       <div className="mx-auto max-w-[1300px]">
 
         {/* Section Heading */}
-        <div className="relative mb-12 text-center sm:mb-14 lg:mb-16">
+        <div className="relative mb-8 text-center sm:mb-10 lg:mb-12">
 
           {/* Generated Background With Both Decorative Icons */}
           <div
